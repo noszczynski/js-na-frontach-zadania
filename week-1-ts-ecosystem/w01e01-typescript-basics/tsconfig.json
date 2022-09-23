@@ -8,7 +8,7 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "outDir": "dist",
-    "baseUrl": "../../../Downloads/w01e01-typescript-basics-kopia/src",
+    "baseUrl": "src",
     "paths": {
       "*": [
         "node_modules/*",

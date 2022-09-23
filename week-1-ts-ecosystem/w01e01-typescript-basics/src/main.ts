@@ -20,5 +20,3 @@ const isAdult = hasGivenAge(1)
 
 console.log(`User ${user.name} is ${isAdult(user) ? 'adult' : 'minor'}`)
 console.log(`and has${hasAddress(user) ? '' : ' no'} address`)
-
-export {};

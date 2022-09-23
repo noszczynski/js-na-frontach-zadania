@@ -1,5 +1,15 @@
 {
   "name": "w01e01-typescript-basics",
   "version": "1.0.0",
-  "scripts": {}
+  "main": "src/main.ts",
+  "scripts": {
+    "start": "ts-node ../../../Downloads/w01e01-typescript-basics-kopia/src/main.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.18",
+    "ts-node": "^8.8.1",
+    "tslib": "^2.4.0",
+    "typescript": "3.8.3"
+  },
+  "dependencies": {}
 }

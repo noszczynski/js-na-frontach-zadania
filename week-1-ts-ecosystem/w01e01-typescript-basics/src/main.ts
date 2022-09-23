@@ -5,26 +5,20 @@
  * całość programu musi jednak działać tak jak do tej pory !
  *
  * */
+import {User} from "./types/User";
+import {user} from "./user";
 
-const user: any = {
-  name: 'Andy',
-  age: 30,
-  email: 'andy@mail-me-tommorow.com',
-  address: {
-    street: 'Strange Alley',
-    no: 23,
-  },
+function hasAddress({ address }: User): boolean {
+  return !!address
 }
 
-function hasAddress(user: any): any {
-  return Boolean(user.address)
+function hasGivenAge(requiredAge: number): (user: User) => boolean {
+  return (user) => (user.age >= requiredAge)
 }
 
-function hasGivenAge(requiredAge: any): any {
-  return (user: any): any => user.age >= requiredAge
-}
-
-const isAdult = hasGivenAge(18)
+const isAdult = hasGivenAge(1)
 
 console.log(`User ${user.name} is ${isAdult(user) ? 'adult' : 'minor'}`)
 console.log(`and has${hasAddress(user) ? '' : ' no'} address`)
+
+export {};

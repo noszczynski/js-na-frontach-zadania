@@ -11,7 +11,10 @@
  * */
 
 import Cart from "./Cart";
+import { ProductType } from "./Product";
 
-console.log(Cart.kind);
+console.log(new Cart(ProductType.Auction));
+console.log(new Cart(ProductType.Buy));
+console.log(new Cart(ProductType.Free));
 
 export {};

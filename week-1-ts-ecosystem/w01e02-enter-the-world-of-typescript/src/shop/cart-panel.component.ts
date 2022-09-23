@@ -8,7 +8,7 @@ interface Panel {
   heading?: string;
 }
 
-export function cartPanel({ items, heading = "Cart Items" }: Panel) {
+export function cartPanel({ items, heading = "Cart Items" }: Panel): HTMLElement {
   const $article = article("panel is-primary my-6 w-75 mx-auto")
   const $heading = p("panel-heading")
 

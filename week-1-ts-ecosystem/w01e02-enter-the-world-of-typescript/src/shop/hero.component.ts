@@ -5,7 +5,7 @@ interface Hero {
   subtitle: string;
 }
 
-export function hero({ title, subtitle }: Hero) {
+export function hero({ title, subtitle }: Hero): HTMLElement {
   const $heroSection = section("hero is-link")
   const $heroBody = div("hero-body")
   const $title = p("title")

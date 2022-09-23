@@ -1,7 +1,7 @@
 import { div } from "@/framework/dom-creators"
 import {Item} from "@/models/Item";
 
-export function cartItem({ name, amount, unit, price }: Item) {
+export function cartItem({ name, amount, unit, price }: Item): HTMLElement {
   const $panelBlock = div("panel-block")
   const $name = div()
   const $amount = div("ml-auto")

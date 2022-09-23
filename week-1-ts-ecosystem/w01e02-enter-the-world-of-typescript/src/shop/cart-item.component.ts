@@ -1,4 +1,4 @@
-import { div } from '../framework/dom-creators.js'
+import { div } from 'framework/dom-creators'
 
 export function cartItem({ name, amount, unit, price }) {
   const $panelBlock = div('panel-block')

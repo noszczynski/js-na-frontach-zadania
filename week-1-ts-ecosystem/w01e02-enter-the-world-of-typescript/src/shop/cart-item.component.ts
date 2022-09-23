@@ -1,15 +1,19 @@
-import { div } from 'framework/dom-creators'
+import { div } from "@/framework/dom-creators"
+import {Item} from "@/models/Item";
 
-export function cartItem({ name, amount, unit, price }) {
-  const $panelBlock = div('panel-block')
+export function cartItem({ name, amount, unit, price }: Item) {
+  const $panelBlock = div("panel-block")
   const $name = div()
+  const $amount = div("ml-auto")
+  const $unit = div("tag")
+  const $price = div("ml-4")
+
   $name.textContent = name
-  const $amount = div('ml-auto')
-  $amount.textContent = amount
-  const $unit = div('tag')
+  $amount.textContent = amount.toString();
   $unit.textContent = unit
-  const $price = div('ml-4')
   $price.textContent = `${price.value} ${price.currency}`
+
   $panelBlock.append($name, $amount, $unit, $price)
+
   return $panelBlock
 }

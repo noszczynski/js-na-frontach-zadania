@@ -1,4 +1,4 @@
-module.exports = {
+{
 	"parser": "@typescript-eslint/parser",
 	"env": {
 		"browser": true,
@@ -13,14 +13,15 @@ module.exports = {
 		"ecmaVersion": 2018,
 		"sourceType": "module",
 		"ecmaFeatures": {
-			"jsx": true,
-		},
+			"jsx": true
+		}
 	},
 	"plugins": [
 		"@typescript-eslint"
 	],
 	"rules": {
-		"quotes": [2, "double", { avoidEscape: true },
-		],
+		"quotes": [
+			2, "double", { "avoidEscape": true }
+		]
 	}
-};
+}

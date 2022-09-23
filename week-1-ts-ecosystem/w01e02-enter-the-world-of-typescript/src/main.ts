@@ -1,5 +1,5 @@
-import { root } from 'shop/root.component'
+import {root} from "@/shop/root.component";
 
-const app = document.querySelector<HTMLDivElement>('#app');
+const $app = document.querySelector<HTMLDivElement>("#app");
 
-app?.append(root());
+$app?.append(root());

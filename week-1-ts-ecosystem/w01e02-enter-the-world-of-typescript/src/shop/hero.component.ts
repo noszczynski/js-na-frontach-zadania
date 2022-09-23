@@ -1,13 +1,21 @@
-import { div, p, section } from 'framework/dom-creators'
+import { div, p, section } from "@/framework/dom-creators"
 
-export function hero({ title, subTitle }) {
-  const $heroSection = section('hero is-link')
-  const $heroBody = div('hero-body')
-  const $title = p('title')
+interface Hero {
+  title: string;
+  subtitle: string;
+}
+
+export function hero({ title, subtitle }: Hero) {
+  const $heroSection = section("hero is-link")
+  const $heroBody = div("hero-body")
+  const $title = p("title")
+  const $subTitle = p("subtitle")
+
   $title.innerText = title
-  const $subTitle = p('subtitle')
-  $subTitle.innerText = subTitle
+  $subTitle.innerText = subtitle
+
   $heroBody.append($title, $subTitle)
   $heroSection.append($heroBody)
+
   return $heroSection
 }

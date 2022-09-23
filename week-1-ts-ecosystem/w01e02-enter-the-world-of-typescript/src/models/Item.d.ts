@@ -1,9 +1,9 @@
 export interface ItemPrice {
     value: number;
-    currency: 'PLN'
+    currency: "PLN"
 }
 
-type ItemUnit = 'kg' | "g"
+type ItemUnit = "kg" | "g"
 
 export interface Item {
     name: string;

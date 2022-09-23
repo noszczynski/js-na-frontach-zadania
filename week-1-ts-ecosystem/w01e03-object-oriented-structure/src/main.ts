@@ -9,3 +9,9 @@
  * Przygotuj koszyki dla każdego rodzaju produktów.
  * - po prostu: wykaż, że przygotowana logika i modele danych — działają :)
  * */
+
+import Cart from "./Cart";
+
+console.log(Cart.kind);
+
+export {};

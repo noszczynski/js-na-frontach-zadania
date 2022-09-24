@@ -97,9 +97,3 @@ describe("Cart class - success", () => {
         expect(cartOfBuyProducts.sumProducts()).toEqual(sumOfProduct1 + sumOfProduct2);
     })
 })
-
-describe("Cart class - failure", () => {
-    it("", () => {
-        expect(2).toBe(2);
-    })
-})

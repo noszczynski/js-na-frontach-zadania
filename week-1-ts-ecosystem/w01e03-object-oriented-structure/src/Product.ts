@@ -49,6 +49,10 @@ class Product<Type extends ProductType> {
         if (count !== undefined) this.#count = count;
         if (price !== undefined) this.#price = price;
     }
+
+    getInfo () {
+        return `Name: ${this.#name}, Price: ${this.#price}, Count: ${this.#count}`;
+    }
 }
 
 export default Product;

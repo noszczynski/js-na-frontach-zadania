@@ -2,11 +2,11 @@
   "name": "w01e03-object-oriented-structure",
   "version": "1.0.0",
   "scripts": {
-    "start": "nodemon src/main.ts",
-    "test": "jest",
     "dev": "nodemon --exec ts-node src/main.ts",
-    "build": "tsc",
-    "preview": "node dist/main.js"
+    "build": "tsc src/main.ts",
+    "preview": "node dist/main.js",
+    "tsc": "./node_modules/typescript/bin/tsc",
+    "test": "jest"
   },
   "devDependencies": {
     "@babel/core": "^7.19.1",

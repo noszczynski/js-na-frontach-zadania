@@ -34,7 +34,7 @@ class Cart<TType extends ProductType> {
     sumProducts (): number {
         const arr: [string, Product<TType>][] = Array.from(this.products);
 
-        return arr.reduce((sum, [, product]) => {
+        const sum = arr.reduce((sum, [, product]) => {
             if (!product.price) {
                 return sum;
             }
@@ -42,6 +42,14 @@ class Cart<TType extends ProductType> {
             sum += product.price * product.count;
             return sum;
         }, 0);
+
+        return Math.trunc(sum * 100) / 100;
+    }
+
+    getProductsInfo (): string {
+        const arr: [string, Product<TType>][] = Array.from(this.products);
+
+        return "\n" + arr.map(([, product]) => `- ${product.getInfo()}`).join("\n");
     }
 }
 

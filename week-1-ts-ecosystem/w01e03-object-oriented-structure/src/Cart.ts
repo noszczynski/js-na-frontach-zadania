@@ -1,32 +1,29 @@
-import Product, {ProductId} from "./Product";
-import ProductForFree from "./ProductForFree";
+import Product, {ProductId, ProductType, UpdateProductParams} from "./Product";
 
-type Products = Map<ProductId, Product>;
+type Products<TType extends ProductType> = Map<ProductId, Product<TType>>;
 
-class Cart {
-    #products: Products = new Map();
+class Cart<TType extends ProductType> {
+    #products: Products<TType> = new Map();
 
-    constructor() {
-        //
-    }
-
-    addProduct (product: Product): void {
+    addProduct (product: Product<TType>): void {
         this.products.set(product.id, product);
     }
 
-    getProduct (productId: ProductId): void {
-        this.products.get(productId);
+    getProduct (productId: ProductId): Product<TType> | undefined {
+        return this.products.get(productId);
     }
 
-    updateProduct (product: Product): void {
-        this.products.set(product.id, product);
+    updateProduct (id: ProductId, params: UpdateProductParams<TType>): void {
+        const product = this.products.get(id);
+        product.update(params);
+        this.products.set(id, product);
     }
 
     deleteProduct (productId: ProductId): void {
         this.products.delete(productId);
     }
 
-    get products (): Products {
+    get products (): Products<TType> {
         return this.#products
     }
 
@@ -35,17 +32,13 @@ class Cart {
     }
 
     sumProducts (): number {
-        const arr: [string, Product][] = Array.from(this.products);
+        const arr: [string, Product<TType>][] = Array.from(this.products);
 
         return arr.reduce((sum, [, product]) => {
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore
-            if (product instanceof ProductForFree || !product.price) {
+            if (!product.price) {
                 return sum;
             }
 
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore
             sum += product.price * product.count;
             return sum;
         }, 0);

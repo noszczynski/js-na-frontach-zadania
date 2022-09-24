@@ -7,27 +7,29 @@ export enum ProductType {
 }
 
 export type ProductId = ReturnType<typeof uuid>
+export type Price<Type> = Type extends ProductType.Buy | ProductType.Auction ? number : undefined;
 
-class Product {
-    readonly #type: ProductType;
+export interface UpdateProductParams<Type> {
+    name?: string;
+    count?: number;
+    price?: Price<Type>;
+}
+
+class Product<Type extends ProductType> {
     readonly #id: ProductId;
-    readonly #name: string;
-    readonly #count: number;
+    #name: string;
+    #count: number;
+    #price: Price<Type>;
 
-    constructor(name: string, type: ProductType, count = 0) {
-        this.#id = uuid();
-
-        this.#type = type;
+    constructor(name: string, price: Price<Type>, count = 0, id = uuid()) {
         this.#name = name;
         this.#count = count;
+        this.#price = price;
+        this.#id = id;
     }
 
     get id () {
         return this.#id
-    }
-
-    get type () {
-        return this.#type
     }
 
     get name () {
@@ -36,6 +38,16 @@ class Product {
 
     get count () {
         return this.#count
+    }
+
+    get price (): number {
+        return this.#price
+    }
+
+    update ({ name, count, price }: UpdateProductParams<Type>): void {
+        if (name !== undefined) this.#name = name;
+        if (count !== undefined) this.#count = count;
+        if (price !== undefined) this.#price = price;
     }
 }
 

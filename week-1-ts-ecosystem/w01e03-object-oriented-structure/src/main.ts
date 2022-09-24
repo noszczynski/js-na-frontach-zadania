@@ -11,17 +11,18 @@
  * */
 
 import Cart from "./Cart";
-import { ProductType } from "./Product";
-import ProductForAuction from "./ProductForAuction";
-import ProductToBuy from "./ProductToBuy";
+import Product, {ProductType} from "./Product";
 
-const exampleCart1 = new Cart();
-const exampleCart2 = new Cart();
-const exampleCart3 = new Cart();
+const exampleCart1 = new Cart<ProductType.Buy>();
+const exampleCart2 = new Cart<ProductType.Auction>();
+const exampleCart3 = new Cart<ProductType.Free>();
 
-exampleCart1.addProduct(new ProductToBuy("Marchewka opakowanie 1kg", 2.19, 12))
-exampleCart1.addProduct(new ProductToBuy("Ziemniaki siatka 5kg", 4.59, 3))
-exampleCart1.addProduct(new ProductForAuction("Konsola PS4 Slim", 1299, 1))
+/* Core features */
+exampleCart1.addProduct(new Product<ProductType.Buy>("Marchewka opakowanie 1kg",2.19, 12));
+exampleCart1.addProduct(new Product<ProductType.Buy>("Ziemniaki siatka 5kg",4.59, 3));
+
+
+exampleCart2.addProduct(new Product<ProductType.Auction>("Konsola PS4 Slim", 1299, 1));
 
 console.log(exampleCart1.sumProducts())
 

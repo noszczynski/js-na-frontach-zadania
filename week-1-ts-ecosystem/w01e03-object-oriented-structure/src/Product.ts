@@ -51,7 +51,7 @@ class Product<Type extends ProductType> {
     }
 
     getInfo () {
-        return `Name: ${this.#name}, Price: ${this.#price}, Count: ${this.#count}`;
+        return `Name: ${this.#name}, ${this.#price !== undefined ? `Price: ${this.#price}, `: ""}Count: ${this.#count}`;
     }
 }
 

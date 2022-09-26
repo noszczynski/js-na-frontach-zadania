@@ -5,7 +5,7 @@
  * całość programu musi jednak działać tak jak do tej pory !
  *
  * */
-import {User} from "./types/User";
+import {User} from "./models/User";
 import {user} from "./user";
 
 function hasAddress({ address }: User): boolean {

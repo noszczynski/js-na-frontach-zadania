@@ -5,7 +5,6 @@
     "dev": "nodemon --exec ts-node src/main.ts",
     "build": "tsc src/main.ts",
     "preview": "node dist/main.js",
-    "tsc": "./node_modules/typescript/bin/tsc",
     "test": "jest"
   },
   "devDependencies": {

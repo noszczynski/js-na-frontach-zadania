@@ -1,5 +1,14 @@
 {
   "name": "w01e04-light-me-up",
   "version": "1.0.0",
-  "dependencies": {}
+  "scripts": {
+    "start": "nodemon --exec ts-node src/main.ts",
+    "build": "tsc src/main.ts",
+    "preview": "node dist/main.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.3"
+  }
 }

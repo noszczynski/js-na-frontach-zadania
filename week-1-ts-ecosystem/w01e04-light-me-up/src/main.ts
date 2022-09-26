@@ -11,7 +11,7 @@
 class PowerSource {
   private energySupply = 100
 
-  consume(energy) {
+  consume(energy: number) {
     this.energySupply -= energy
   }
 }
@@ -19,3 +19,7 @@ class PowerSource {
 class LightBulb {
   protected readonly powerConsumption = 20
 }
+
+console.log("Log")
+
+export {};

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "src/main.ts",
   "scripts": {
-    "start": "ts-node src/main.ts"
+    "start": "nodemon src/main.ts"
   },
   "devDependencies": {
     "@types/node": "^18.7.18",

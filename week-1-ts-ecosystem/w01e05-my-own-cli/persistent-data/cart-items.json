@@ -1,5 +1,5 @@
 {
-  "forFree": [],
-  "buyNow": [],
-  "auctions": []
+  "buy": [],
+  "free": [],
+  "auction": []
 }
